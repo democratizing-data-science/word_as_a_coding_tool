@@ -31,7 +31,7 @@ Public Sub Word_as_a_coding_device()
         GoTo ExitHere
     Else
         'Stop if user does not click Yes
-        If MsgBox("Do  you want to extract all comments to a new document?", _
+        If MsgBox("Do you want to extract all codes and quotes to a new document?", _
                 vbYesNo + vbQuestion, Title) <> vbYes Then
             GoTo ExitHere
         End If
@@ -82,7 +82,7 @@ Public Sub Word_as_a_coding_device()
         .Columns(3).PreferredWidth = 42
         .Columns(4).PreferredWidth = 18
         .Columns(5).PreferredWidth = 12
-        .Rows(1).HeadingFormat = True
+        .Rows(1).HeadingFormat = False
     End With
 
     'Insert table headings
