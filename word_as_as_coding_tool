@@ -5,10 +5,10 @@ Public Sub Word_as_a_coding_device()
     'Revised October 2013 by Lene Fredborg: Date column added to extract
     'THIS MACRO IS COPYRIGHT. YOU ARE WELCOME TO USE THE MACRO BUT YOU MUST KEEP THE LINE ABOVE.
     'YOU ARE NOT ALLOWED TO PUBLISH THE MACRO AS YOUR OWN, IN WHOLE OR IN PART.
-    'Revised October 2021 by Manuel S. Gonzalez Canche. Content adapted to use word as a coding device.
+    'Revised May 2021 by Manuel S. Gonzalez Canche. Content adapted to use word as a coding device.
     '=========================
     'The macro creates a new document
-    'and extracts all comments from the active document
+    'and extracts all comments (code) and commented text (quote) from the active document
     'incl. metadata
     
     'Minor adjustments are made to the styles used
