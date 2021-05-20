@@ -104,9 +104,9 @@ Public Sub Word_as_a_coding_device()
             'The comment document (i.e., UNITID in GRATIS)
             .Cells(2).Range.Text = oDoc.Name
             'The text marked by the comment
-            .Cells(3).Range.Text = oDoc.Comments(n).Scope
+            .Cells(3).Range.Text = oDoc.Comments(n).Range.Text
             'The comment itself
-            .Cells(4).Range.Text = oDoc.Comments(n).Range.Text
+            .Cells(4).Range.Text = oDoc.Comments(n).Scope
             'The comment author
             .Cells(5).Range.Text = oDoc.Comments(n).Author
         End With
