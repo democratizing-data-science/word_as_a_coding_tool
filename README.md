@@ -11,3 +11,19 @@ Only when working with group transcripts, you will need to select the column cal
 
 The analyses of actor to actor communication exchanges need manual data preparation as explained in the example.
 
+***USE***
+To use, open word in windows or mac.
+
+Go to view, 
+
+Select macro, 
+
+Add a temporal name if no macro exists, then select create in windows (or click the plus sign in mac)
+
+Once visual basic for applications (VBA) is opened, select the code provided here and replace all info in the new macro in VBA word. 
+
+Save and close.
+
+When you open a word document with comments, select view, macro, the macro called "Word_as_a_coding_device" and hit run. All codes will be exported.
+
+***You only need to do these steps once per machine***
