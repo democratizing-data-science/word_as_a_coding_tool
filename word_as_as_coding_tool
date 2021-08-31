@@ -42,14 +42,14 @@ Dim Title As String
    
    With xlWB.Worksheets(1)
         For i = 1 To ActiveDocument.Comments.Count
-            .Cells(i + 1, 5).Formula = ActiveDocument.Name
-            .Cells(i + 1, 6).Formula = ActiveDocument.Comments(i).Range.Text
+            '.Cells(i + 1, 6).Formula = ActiveDocument.Name
+            .Cells(i + 1, 5).Formula = ActiveDocument.Comments(i).Range.Text
             .Cells(i + 1, 2).Formula = ActiveDocument.Comments(i).Scope
             .Cells(i + 1, 1).Formula = " Page # " & ActiveDocument.Comments(i).Scope.Information(wdActiveEndPageNumber) & " - Starting line # " & ActiveDocument.Comments(i).Scope.Information(wdFirstCharacterLineNumber)
             .Cells(i + 1, 3).Formula = ActiveDocument.Comments(i).Author
             .Cells(i + 1, 4).Formula = Format(ActiveDocument.Comments(i).Date, "dd/MM/yyyy")
-    .Cells(1, 5) = "UNIT_ID (if single case, e.g., interview transcript)"
-    .Cells(1, 6) = "UNIT_ID_i: Code_j (if group transcript)"
+    '.Cells(1, 6) = "UNIT_ID (if single case, e.g., interview transcript)"
+    .Cells(1, 5) = "UNIT_ID_i: Code_j (if group transcript)"
     .Cells(1, 2) = "Quote"
     .Cells(1, 1) = "Page & Line"
     .Cells(1, 3) = "Author_or_coder_name"
