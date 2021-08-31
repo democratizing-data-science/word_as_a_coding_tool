@@ -6,12 +6,15 @@ The macro exports all comments (i.e., codes) and their content (i.e., quotes) to
 This table can then be used with MOVIE to analyze the temporal evolution of those codes.
 
 ***IMPORTANT*** If the Word document (transcript) contains multiple participants, like in focus groups, add the participant ID to each comment followed by ":" as follows:
-UNIT_ID_i: Code_j
-Only when working with group transcripts, you will need to select the column called "UNIT_ID_i: Code_j (if group transcript)" and select Text to Columns using : as the delimiter in options. After this, you may delete "(if group transcript)" in the resulting column called "(Code_j (if group transcript)." The same appies to the column called "UNIT_ID (if single case, e.g., interview transcript)", that is you can delete the "(if single case, e.g., interview transcript)" portion. Finally, if analysing individual files you can change the column name "UNIT_ID_i: Code_j (if group transcript)" to "Code_j." All these changes to name are optional for MOVIE was programmed to work regardless of the genering column names selected. The only requirement is that the column UNIT_ID sends a connection to the column containing codes.
+UNIT_ID_i:Code_j. Each comment needs to start with the actor ID information, which may be more than one in cases with multiple participants providing information.
 
-The analyses of actor to actor communication exchanges need manual data preparation as explained in the example.
+After all coding is completed, you will need to select the column called "UNIT_ID_i: Code_j" in excel and select Data, Text to Columns using ":" (without quotations) as the delimiter in options. After this, you will have two columns, one with actors ID and another with codes IDs. Even if the latter column is called code, it can be used for communication exchanges in the form Actor_ID_i to Actor_ID_j. 
 
-***USE***
+Recall that *All these column names are optional* for MOVIE was programmed to work regardless of the column names selected. The only requirement is that the relationships are in the form, sender to receiver or that the column UNIT_ID sends a connection to the column containing codes or being the target of a message.
+
+The analyses of actor to actor communication exchanges may be achieved by selecting the text in the word document and adding a comment in the form: Actor_id_i:Actor_id_j. The process of separating these relationships using Data, Text to Columns using ":" (without quotations) as the delimiter is the same as detailed in the example.
+
+***Instructions to USE***
 To use, open word in windows or mac.
 
 Go to view, 
