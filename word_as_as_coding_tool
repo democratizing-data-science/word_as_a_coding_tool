@@ -25,7 +25,7 @@ Dim Title As String
         GoTo ExitHere
     Else
         'Stop if user does selects NO
-        If MsgBox("If you want to extract all codes and quotes to a new excel document select yes. Remember to save this file as a *.csv file to use with MOVIE. If the transcript is for group analyses, use text to columns in 'UNIT_ID and Code' to disagregate these columns. More information at https://github.com/democratizing-data-science/word_as_a_coding_tool", _
+        If MsgBox("If you want to extract all codes and quotes to a new excel document select yes. Remember to save this file as a *.csv file to use with MOVIE. Sender=: provider of information, referred to as Actor_i in the paper; Receiver: label or code, referred to as Code_j, or the target of information, referred to as Actor_j. More information at https://github.com/democratizing-data-science/word_as_a_coding_tool", _
                 vbYesNo + vbQuestion, Title) <> vbYes Then
             GoTo ExitHere
         End If
@@ -49,7 +49,7 @@ Dim Title As String
             .Cells(i + 1, 3).Formula = ActiveDocument.Comments(i).Author
             .Cells(i + 1, 4).Formula = Format(ActiveDocument.Comments(i).Date, "dd/MM/yyyy")
     '.Cells(1, 6) = "UNIT_ID (if single case, e.g., interview transcript)"
-    .Cells(1, 5) = "UNIT_ID_i:Code_j"
+    .Cells(1, 5) = "Sender:Receiver"
     .Cells(1, 2) = "Quote"
     .Cells(1, 1) = "Page & Line"
     .Cells(1, 3) = "Author_or_coder_name"
