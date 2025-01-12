@@ -11,7 +11,7 @@ Sub Word_as_a_coding_device()
     'https://answers.microsoft.com/en-us/msoffice/forum/all/extract-comments-to-a-new-document-macro-including/e9394b78-875b-4319-aa40-d632b7c745f4
     '=========================
 
-    Dim xlApp As Object
+Dim xlApp As Object
 Dim xlWB As Object
 
 Dim i As Integer
