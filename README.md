@@ -1,6 +1,8 @@
 # word_as_a_coding_tool
 This macro enables the use of word as a coding device, substituting NVivo, Atlas.ti, RQDA, etc. 
 
+# Make sure you install the macro in PC or Mac depending on your operating system
+
 The macro exports all comments (i.e., codes) and their content (i.e., quotes) to a new Excel document in a table form.
 
 This table can then be used with MOVIE to analyze the temporal evolution of those codes.
