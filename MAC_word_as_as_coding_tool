@@ -1,0 +1,62 @@
+Sub Word_as_a_coding_device()
+
+    '=========================
+    'Macro created in 2021 by Manuel S. Gonzalez Canche
+    'As part of the Democratizing Data Science movement.
+    '=========================
+    'The macro creates a new document
+    'and extracts all comments (code) and commented text (quote) from the active document
+    'incl. metadata and exports it to a new Excel file so that it can be read by MOVIE
+    'Initial guidance and input obtained from:
+    'https://answers.microsoft.com/en-us/msoffice/forum/all/extract-comments-to-a-new-document-macro-including/e9394b78-875b-4319-aa40-d632b7c745f4
+    '=========================
+
+    Dim xlApp As Object
+Dim xlWB As Object
+
+Dim i As Integer
+    
+Dim Title As String
+    
+    Title = "Using Word as a qualitative coding device"
+    
+    If ActiveDocument.Comments.Count = 0 Then
+        MsgBox "The active document contains no comments.", vbOKOnly, Title
+        GoTo ExitHere
+    Else
+        'Stop if user does selects NO
+        If MsgBox("If you want to extract all codes and quotes to a new excel document select yes. Remember to save this file as a *.csv file to use with MOVIE. Sender=: provider of information, referred to as Actor_i in the paper; Receiver: label or code, referred to as Code_j, or the target of information, referred to as Actor_j. More information at https://github.com/democratizing-data-science/word_as_a_coding_tool", _
+                vbYesNo + vbQuestion, Title) <> vbYes Then
+            GoTo ExitHere
+        End If
+    End If
+    
+    On Error Resume Next
+    Set xlApp = GetObject(, "Excel.Application")
+    If Err Then
+        Set xlApp = CreateObject("Excel.Application")
+    End If
+    On Error GoTo 0
+    xlApp.Application.Visible = True
+    Set xlWB = xlApp.Application.Workbooks.Add        ' create a new workbook
+   
+   With xlWB.Worksheets(1)
+        For i = 1 To ActiveDocument.Comments.Count
+            '.Cells(i + 1, 6).Formula = ActiveDocument.Name
+            .Cells(i + 1, 5).Formula = ActiveDocument.Comments(i).Range.Text
+            .Cells(i + 1, 2).Formula = ActiveDocument.Comments(i).Scope
+            .Cells(i + 1, 1).Formula = " Page # " & ActiveDocument.Comments(i).Scope.Information(wdActiveEndPageNumber) & " - Starting line # " & ActiveDocument.Comments(i).Scope.Information(wdFirstCharacterLineNumber)
+            .Cells(i + 1, 3).Formula = ActiveDocument.Comments(i).Author
+            .Cells(i + 1, 4).Formula = Format(ActiveDocument.Comments(i).Date, "dd/MM/yyyy")
+    '.Cells(1, 6) = "UNIT_ID (if single case, e.g., interview transcript)"
+    .Cells(1, 5) = "Sender:Receiver"
+    .Cells(1, 2) = "Quote"
+    .Cells(1, 1) = "Page & Line"
+    .Cells(1, 3) = "Author_or_coder_name"
+    .Cells(1, 4) = "Coding date"
+        Next i
+    End With
+ExitHere:
+    Set xlWB = Nothing
+    Set xlApp = Nothing
+End Sub
